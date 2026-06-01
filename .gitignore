@@ -1,0 +1,53 @@
+## Build output
+bin/
+obj/
+
+## NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+
+## Rider específico
+.idea.*/
+
+## Logs e diagnóstico
+*.log
+*.trx
+
+## Cobertura de testes
+coverage*/
+TestResults/
+*.coverage
+*.coveragexml
+
+## Arquivos de publicação
+publish/
+**/Properties/launchSettings.json
+
+## Dados persistidos pela aplicação
+*.json
+!appsettings*.json
+
+## Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+## Variáveis de ambiente e segredos
+.env
+.env.*
+secrets.json
+appsettings.Development.json
