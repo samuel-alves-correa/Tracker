@@ -77,29 +77,3 @@ dotnet build
 ```
 
 ---
-
-## 🗺️ Roadmap / TO-DO
-
-- [ ] Implementar `MetaDiaria.EstaAtiva()` e `MetaDiaria.FoiCumprida()`
-- [ ] Criar `MetaMensal` com verificação de horas e tópicos distintos
-- [ ] Implementar `RelatorioDeEvolucao` (streak, tópicos em risco, horas por módulo)
-- [ ] Implementar `Persistencia` com `System.Text.Json`
-- [ ] Construir menus interativos em `UI/Program.cs`
-- [ ] Corrigir lógica de duplicata em `Modulo.AdicionarTopico()` (verificação deve ocorrer antes de adicionar)
-- [ ] Adicionar testes unitários
-
----
-
-## 📁 Estrutura de Branches
-
-Cada funcionalidade é desenvolvida em branch separada:
-
-| Branch | Descrição |
-|---|---|
-| `feature/topico` | Classe `Topico` |
-| `feature/modulo` | Classe `Modulo` |
-| `feature/registro-estudo` | Value Object `RegistroEstudo` |
-| `feature/meta-diaria` | Implementação de `MetaDiaria` |
-| `feature/meta-mensal` | Implementação de `MetaMensal` |
-| `feature/relatorio` | `RelatorioDeEvolucao` |
-| `feature/persistencia` | Classe `Persistencia` |

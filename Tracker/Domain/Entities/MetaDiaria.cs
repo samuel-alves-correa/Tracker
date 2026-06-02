@@ -20,11 +20,13 @@ class MetaDiaria : IMeta
 
     public bool EstaAtiva(DateTime agora)
     {
-        throw new NotImplementedException();
+        return agora >= Inicio && agora <= Fim;
     }
 
     public bool FoiCumprida(IEnumerable<RegistroEstudo> registros)
     {
-        throw new NotImplementedException();
+        var registosDoDia = registros.Where(r => r.Data.Date == Inicio.Date);
+        var totalMinutosEstudados = registosDoDia.Sum(r => r.Duracao.TotalMinutes);
+        return totalMinutosEstudados >= MetaHorasDia.TotalMinutes;
     }
 }
