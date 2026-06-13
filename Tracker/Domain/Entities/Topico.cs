@@ -3,7 +3,7 @@ using Tracker.Domain.ValueObjects;
 
 namespace Tracker.Domain.Entities;
 
-class Topico
+public class Topico
 {
     public string Id { get; private set; }
     public string Nome { get; set; }
@@ -34,8 +34,9 @@ class Topico
 
     public void AdicionarRegistro(RegistroEstudo registro)
     {
-        if (Status == StatusTopico.NaoIniciado)
-            throw new InvalidOperationException("Não é possível adicionar um registro a um tópico não iniciado.");
+        if (registro == null) throw new ArgumentNullException(nameof(registro));
+        if (Status == StatusTopico.Concluido)
+            throw new InvalidOperationException("Não é possível adicionar um registro a um tópico já concluído.");
         _registros.Add(registro);
         if (Status == StatusTopico.NaoIniciado)
             Status = StatusTopico.Iniciado;
