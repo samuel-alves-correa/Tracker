@@ -3,7 +3,7 @@ using Tracker.Entities.Enums;
 
 namespace Tracker.Domain.Entities;
 
-class Modulo
+public class Modulo
 {
     public string Nome { get; set; }
     public string Id { get; private set; }
@@ -25,11 +25,12 @@ class Modulo
 
     public void AdicionarTopico(Topico topico)
     {
-        _topicos.Add(topico);
+        if (topico == null) throw new ArgumentNullException(nameof(topico));
+
         if (_topicos.Any(t => string.Equals(t.Nome, topico.Nome, StringComparison.OrdinalIgnoreCase)))
-        {
             throw new TopicoDuplicadoException(topico.Nome);
-        }
+
+        _topicos.Add(topico);
     }
 
     public double CalcularProgresso()
